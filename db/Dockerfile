@@ -7,7 +7,6 @@ FROM lczub/testlink_code:${tl_release} as tl_code
 ARG tl_release
 WORKDIR /var/testlink-code-${tl_release}/install/sql/postgres
 COPY scripts/fixing_testling_pg_install.sh ./
-COPY scripts/40-testlink_add_pytlapi_dev_user.sql ./
 RUN chmod +x fixing_testling_pg_install.sh && \
   mv testlink_create_tables.sql 10-testlink_create_tables.sql && \
   mv testlink_create_udf0.sql 20-testlink_create_udf0.sql && \
